@@ -1,0 +1,12 @@
+# Ignore build output directories
+**/obj/Debug/
+**/obj/Release/
+**/obj/publish/
+**/bin/Debug/
+.vs/
+
+# Ignore everything under bin/Release
+**/bin/Release/*
+# But do not ignore the publish folder inside bin/Release
+!**/bin/Release/publish/
+!**/bin/Release/publish/**
