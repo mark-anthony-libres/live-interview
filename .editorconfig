@@ -1,0 +1,10 @@
+﻿[*.{cs,vb}]
+
+# IDE0003: Remove qualification
+dotnet_style_qualification_for_event = true
+
+# IDE0047: Remove unnecessary parentheses
+dotnet_diagnostic.IDE0047.severity = none
+
+# CS8600: Converting null literal or possible null value to non-nullable type.
+dotnet_diagnostic.CS8600.severity = none

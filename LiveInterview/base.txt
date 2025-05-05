@@ -1,0 +1,224 @@
+Introduce in non technical way
+
+Hey, I’m Anthony. I’ve been working in the IT industry for about five years now. Almost all of that has been in full stack development—meaning I’ve worked on both the front-end (what users see) and the back-end (the stuff behind the scenes that makes everything work). Before joining Accenture, I worked at different companies in development roles, and I also spent some time at Google—about nine months as a technical support rep and four months as a back-end developer.
+Right now, I’m a C11 here at Accenture. One of the projects I recently worked on was building a chatbot system for a healthcare platform. The goal was to help users get quick answers about their insurance plans, payments, memberships, and more. My role was to make sure the chatbot had all the right information to give helpful answers. We pulled that info from PDF documents, and that was actually one of the biggest challenges. Each PDF had a different format—some had tables, some had links, others were just written differently—so it took a lot of trial and error to figure out how to pull out the important information properly and make sure the chatbot could use it. I spent a good amount of time fixing and improving the part of the system that reads and organizes these files, especially as more and more were added over time.
+Before that, I worked on a long-running web application that had both a desktop and web version. My main tasks there were to keep the system running smoothly, fix issues, respond to user concerns, and document everything we changed or discovered along the way. The app had been around for quite a while, so we were mostly focused on maintaining it and making sure it stayed reliable.
+One of the biggest things I worked on during that project was upgrading the system from an old version of Python (which is the language it was built in) to a newer one. It wasn’t just a simple update—we had to go through the entire app, fix the parts that didn’t work with the new version, update or replace old tools, and carefully test everything to avoid breaking anything. I worked closely with the team throughout the process, especially during the deployment, to make sure everything went smoothly.
+On top of that, I delivered four major improvements to the app within a year. These included adding new features—like new pages or functions that the users requested—and making sure the system ran faster and more efficiently. Since this app didn’t have automated tests in place (because it’s pretty old and complex), we relied on manual testing. We would check everything ourselves, then have the business analyst and the user test it too, just to be extra sure everything worked before we launched it.
+That’s pretty much a full look at what I’ve done so far. I really enjoy solving problems, improving systems, and working with teams to build things that actually help people.
+
+We know a CV only tells part of your story. Please tell us about any qualities, skills and experience that you can bring to this role that may not be obvious from your CV and Accenture profile?
+
+While my resume shows my experience in Python and backend development, there are a few things about how I work that might not be obvious at first. 
+
+I take full responsibility for the systems I work on. I always look for ways to improve what’s already there, not just build what’s asked. I care about making the system better, faster, and easier to maintain. 
+
+I work hard and stay committed to my job. I’m willing to stay late or work on weekends if needed. I always do my best to finish on time and do more than what is expected.
+
+I also have knowledge in cloud setup and services, which supports my ability to build and maintain scalable and efficient systems when needed.
+
+I give my full effort in every role and always look for ways to bring value to the team through my skills, dedication, and mindset. 
+
+I have a motto that "I always give my best first, and only when I've exhausted every option do I consider alternative solutions." This means I don’t give up easily. I keep trying until I find the best solution.
+
+Tell me About yourself ?
+
+Hi, I'm Mark. I have 5 years of work experience, mostly focused on using Python. I’m currently living in the Philippines. 
+When I write code, I always think about the “what ifs” to my application. I’m confident in fixing bugs, and I make sure to deliver good results. I enjoy working both on my own and with a team. 
+I care a lot about the projects I work on and always try to make systems better and more efficient. 
+At my last job, we upgraded the system from Python 2 to Python 3. We faced many errors during the process, but in the end, we were able to complete the upgrade successfully. 
+I also have frontend experience. I’ve worked with Native JavaScript, React JS, and Tailwind CSS. I can turn Figma designs into real, working web pages. I also have knowledge of working with APIs using Fast API and Flask. 
+My recent project involved 
+ 
+Experience 
+ 
+Hey, Im Anthony and i have total of 5 yrs of working experience in IT industry. Almost 5 yrs of Full Stack Developer from outside Accenture and 4 months as Back-end developer and 9 months as Technical Support Representative at Google. I’m currently C11 here at Accenture. 
+ 
+My recent project involved creating a chatbot system for a healthcare platform. The chatbot answers user inquiries about membership, insurance, payments, and plans. On the backend, we use Google Cloud Storage to store PDF files. A data pipeline automatically detects new uploads, extracts their content, and saves it to a database. We then use Vertex AI to train a model on the extracted data. The PDFs are processed with Python, PdfPlumber for extraction, and Pandas for managing the data in a table format. 
+The biggest challenge I encountered during development was extracting content from the PDF files. I needed to reliably extract Chapter, Section, and Subsection headers, as well as tables and links from each file. With hundreds of PDFs to process, the issue was that each had a different format, requiring us to constantly update and maintain the parser script to handle each new format we encountered. 
+I was also part of a project where we maintained a large web application. The background of this project is that we had two platforms: the OS and the web. The system has been around for a while, so our main task was to maintain it. We focused on addressing user inquiries, investigating issues, and creating detailed documentation of errors and changes.  
+The architecture of this project consists of three servers: frontend, middleware, and backend. The frontend is built using React.js, JavaScript, and TypeScript, while the middleware and backend are developed with Python and Flask. They are communicating through API.  
+One of the biggest things I worked on during the project was migrating the application from Python 2 to Python 3. It involved a few steps, like using tools like 2to3 to automatically update most of the code. But there were some parts that needed manual fixes because the tool couldn’t handle everything. We also made sure to test the whole application to ensure it ran smoothly after the migration, fixing any issues that came up due to changes in Python 3. A big part of the process was making sure all the third-party libraries were up to date and compatible with Python 3. We had to check the versions of these libraries, update them, or even replace them if they were too old. On top of that, I worked closely with the team to ensure the deployment went smoothly and to avoid any errors during runtime, making sure the whole transition was as seamless as possible. 
+On top of that, I successfully completed four major enhancements within a year, which included adding new page functionalities and improving the performance of the APIs. 
+For deployment, we first test everything in the staging environment before pushing it to production. Once the user reviews and approves the changes, we then deploy them to production. We didn’t have unit tests for this application because it’s been around for a long time, and there are many routes we’re not familiar with, so we weren’t sure how some of them would respond. As a result, we perform manual testing from dev to the B.A and to the user. 
+I think I've covered everything and shared all the necessary details. 
+ 
+What is Fast Api ? 
+FastAPI is a web framework for building APIs with Python. What's great about FastAPI is that it has built-in automatic documentation and enforces all type hints to validate the data. 
+ 
+What is Api ? 
+An API (Application Programming Interface) is a set of rules and protocols that allows different software applications to communicate with each other. 
+What is Synchronous (Sync)? 
+In a synchronous function, each line of code runs one after another in sequence. If a line of code takes a long time, the next line cannot begin until the current task finishes. This is known as blocking behavior. 
+What is Asynchronous (Async)? 
+In an asynchronous function, tasks can run concurrently. The program doesn’t have to wait for one line of code to finish before starting the next one. 
+What is Generator 
+Is a way to gives you one value at a time, it only gives you the next value when you ask for it and It doesn't store everything in memory all at once. 
+ 
+What is decorator 
+a decorator is a special type of function that can modify or extend the behavior of another function without changing its actual code. 
+What is Lambda 
+is an anonymous function (meaning it doesn't have a name), unlike a regular function where you give it a name. It's a quick way to create a function for simple tasks that only need a single line of code. The main point is that a lambda can only have one expression (no complex code or multiple lines). 
+ 
+OOP Questions 
+ 
+What is Class 
+A class in Python is like a blueprint or template that defines how an object, its like a group of method and property. 
+ 
+What is OOP 
+Is a style in programming where the main purpose is to organize codes and make a program more understandable. 
+ 
+What is Inheritance 
+Is a programming way to inherit the properties and methods of another class. It is also to extend or modify the functionality of a class but in separate class. 
+What is abstract class and method 
+Abstract class is a blueprint that provides structure but does not fully implement all behavior like we can choose to enforce a child class to implement a method. 
+ 
+Data Types Questions 
+ 
+What is Tuple 
+Is one of data type of python that is very similar to list but it is mutable meaning you cannot change the values once the tuple is created. 
+What is Set 
+It is also similar to list but the difference is it does not maintain the order of the item and we can add or change the item but it automatically remove duplicate items to ensure the uniqueness of each item also it allows only to store data types that is immutable such as tuple, string and int. 
+What is Exception 
+What is Try and Catch 
+ 
+ 
+Features that I want to apply on youtube 
+ 
+Blocking youtube channels 
+ 
+
+Tell me about
+Hi, I’m from Davao City, and I graduated from the University of Mindanao. I’ve been working with Python for over five years now, starting back in 2019. Along the way, I’ve also developed strong skills in technologies like Django, Flask, JavaScript—including Node.js, React.js, Express.js, and TypeScript—PHP, and Google Cloud Platform services like Cloud Run, Cloud Functions, VPC, Cloud Monitoring, and App Engine.
+
+My journey began in a government institution, where I worked as a Full Stack Developer for two years. During that time, I handled projects like the Job Order Management System, the COVID-19 Tracing System, and the Document Tracing System. One project I’m particularly proud of is the official website of Digos City, which I contributed to and is still live today.
+
+After two years, I was hired by Indra Philippines as a Software Engineer, where I worked for another 2 years and 7 months. My primary responsibility was maintaining a large system used and managed by the client. I focused on addressing user and business analyst inquiries, investigating issues, and creating detailed documentation of errors and the existing system processes.
+
+then after indra, i was hired in accenture philippines as career level 11, naging part ako ng isang project sa pag gawa ng chat bot we use vertext a.i. and ako yung taga gawa ng data pipeline which kumuha ng data from a thousand sa pdf file para e feed sa vertex, na roll kamingkasama kung mga pinoy after 2 months dahil sa security issue daw ng project
+
+
+
+
+
+
+Tell me about yourself.
+
+Of course! It's Mark, and I'm thrilled to be here interviewing for the Python Developer position. I have a strong passion for programming and have been working with Python for four years. 
+My journey into software development started when I was studying Information Technology, or BSIT, at the University Of Mindanao. There, I was exposed to various programming languages. However, Python quickly became my favorite due to its simplicity, versatility, and the vast community support it offers.
+
+During my career, I've had the opportunity to work independently and with team members on a wide range of projects, from developing web applications from scratch using Django, Flask, React, and NodeJS to migrating data and creating scripts. I find great satisfaction in solving complex problems efficiently and writing clean and maintainable code. 
+
+When I'm not working, I enjoy taking courses on Udemy to expand my knowledge not just in Python but also to keep up with the latest technology. I believe that continuous learning is crucial in our field.
+
+Introduce yourself in a nonprogrammer's way
+
+Before anything else, I'm thrilled to have interviewed for the software engineer position. I was hired as a Job Order Employee during my fourth year of college and worked as a Full Stack Developer there for 2 years, Our team consisted of five developers, each responsible for specific projects. I was tasked with independently handling the Job Order Management System, Document Tracing System, and Covid Tracing System projects. However, I eventually decided to resign from my first employer because I believed it would be beneficial to gain experience in the actual industry. So I was hired in 2021 as a Python Developer in Indra Philippines, we consisted of 7 developers, primarily focused on maintaining the existing system and addressing inquiries from Business Analysts, which was our top priority. Since I  started here, I've been responsible for enhancing the system, resolving issues, and concluding investigations into reported bugs. 
+
+During the years of my career, I've had the opportunity to work independently and with team members on a wide range of projects from developing web applications from scratch to migration of data and creating scripts. I find great satisfaction in solving complex problems efficiently and writing maintainable code. 
+
+Lastly, when I'm not in work mode, I find myself enjoying taking courses in Udemy to expand my knowledge cause I believe that continuous learning is crucial in our field. 
+
+Introduce yourself (nonprogrammer, detailed, short way)
+
+First and foremost, I'd like to convey my sincere appreciation for dedicating your valuable time to conducting this interview for the job role. My name is Mark and since mid-school, I was a PC enthusiast and I knew, I wanted to pursue a career in the field of computer-related work. so after I got my Bachelor's degree, I got myself into the City Government of Digos where I worked as a full-stack developer for two years. One of the unique aspects of my experience there was the opportunity to work independently. As a solo developer, I took on both frontend and backend responsibilities, which have been very challenging but incredibly rewarding experiences, During my time in the government, I completed three significant projects. Among these was the development of the Job Order Management System, designed to assist the HR department in searching for and adding information about both regular and contractual employees. Another project I worked on was the Document Tracing System, which aimed to trace the documents being signed and determine which department was handling them. In government processes, documents often pass through various departments before reaching the mayor's office. The Document Tracing System I developed was a valuable tool for tracking the status of documents and identifying the department where they might be pending. Lastly, I developed the Covid Tracing System. it is an Identification Card generated system related to COVID-19 and it is designed to help health authorities and organizations identify and notify individuals who may have been in close contact with someone infected with the virus.
+
+I later decided to resign from my first job to gain more industry experience. In 2021, I joined Indra Philippines as a Python Developer, working with a team of seven developers. Our primary focus was maintaining the existing system and addressing inquiries from Business Analysts. Since joining, I've been responsible for enhancing the system, resolving issues, and conducting investigations into reported bugs.
+In my current role, I've learned the importance of teamwork and thorough code documentation, ensuring transparency and accountability for every change I make.
+
+In my career, I focus on delivering quality results and enjoy working both in teams and independently. I'm passionate about solving complex problems and creating efficient software. I'm eager to bring my skills to your team and help make your project a success.
+
+Short Introduction
+
+Hi, I'm Mark, and I just celebrated my 27th birthday last week. First of all, I apologize if my spoken English isn't very strong, but I believe it won't hinder my ability to perform the job well. One thing I'm confident about as a developer is i always consider and question what if's in my codes. I can work independently with minimal supervision, and I'm a fast learner. please put in your project. It is my birthday wish, and  i will  promise that i  commited to all the tasks assigned to me, and i will also exceed your expectations even though i dont have knowledge in some areas of python.
+
+Background and Experience
+
+A have a total of 4 years of experience of developer. after i graduate to a batchelor degree i was hired as a full stack developer in our local government our team consist of 5 developers and each of the member has their own projects assigned. I was tasked independently handling the projects including the the job order management system and document tracing which made in django and vanilla js. after 2 years i decided to take the oppurnity in a industry i was hired in a same position Full Stack Developer we focus on maintaining the same project that is made since from 2007 and the technologies that we used is python, flask, react js and celery, redis and docker. Additionaly, I troubleshooted user reported issues and creating scripts. Also i was part of a team responsible for migrating the application from python 2 to python3.  Within a year i completed four enhancement independently. 
+
+
+Short Introduction
+I'm Mark, shy but approachable, always considering the 'what ifs' in code. Confident in my debugging skills, I focus on delivering quality results and enjoy working both in teams and independently. I began my career as a web developer in a government institution, working with Django, JavaScript, and occasionally PHP for about 2 years. Seeking broader experience, I moved to Indra Philippines as a Python Developer. Despite the title, I functioned as a full-stack web developer, contributing to a major project built with Python, Docker, Celery, Flask, and React.js. My responsibilities included system enhancement, creating documentation, and bug investigation. Although my experience may not be as extensive as others, I am eager to learn and grow in my role.
+
+Why would you resign to your current employer?
+
+I will resign because I found myself not feeling challenged by the tasks in the previous months, and my skills, particularly in backend development, became stagnant. The tasks were repetitive, mostly involving debugging and deploying. I didn't want to be a developer who solely focused on debugging; I preferred tasks that brought about substantial changes and allowed me to make a more significant impact on the system. That's why I will resign; I am looking for new and more substantial challenges because the bigger the challenge, the more there is to learn.
+
+Why would you resign to your current employer?
+
+I will resign because I have found that my skills have become stagnant, particularly in backend development. Despite the title in our job description as a 'Python Developer,' our tasks have become mostly focused on front-end enhancements. I want to grow my skills, especially in backend development. While I am already confident in frontend technologies, I aim to expand my knowledge further on the backend side.
+ 
+What was your biggest achievement in your previous work?
+
+In my previous role as a 'Full Stack Developer,' I accomplished several significant tasks. Firstly, I successfully upgraded the system from Python 2 to Python 3.6, ensuring the compatibility of libraries and making substantial code changes to align it with Python 3. Additionally, I independently completed four enhancements, originally intended for two developers per enhancement, but I chose to handle them solo to allow the other developers to focus on different enhancements. These experiences allowed me to grow and develop my skills, contributing positively to the team and organization.
+
+What makes you fit for this position
+
+
+In my previous role, I always strived to exceed their expectations, and none of my superiors had any issues with my performance. I often didn't encounter any blockers or reasons for not completing my tasks on time. I usually finish all my tasks before the deadlines. I believe I'm a strong fit for this position because I have confidence in my ability to excel in this role.
+
+What is the best project you have done so far?
+
+# Technical Questions
+
+How to make code efficient?
+
+Making code efficient is very important, especially on the backend side which often handles a large volume of data. inefficient code can lead to the slow response of requests, causing poor user experience and high cost and resource usage as a company needs to increase hardware or hosting capability.
+
+We can maximize the code efficiency by applying some basic manner in code such as:
+
+using built-in methods, some of the built-in is highly optimized than create your custom functions.
+using profiling code like `cProfile` to identify bottlenecks of the code and identify which part of your code needs to be optimized.
+using cache operations, so that when the data is processed once and requested again it can't process back again instead it retrieves and returns the first cache data from the first process.
+use of libraries, in some cases using popular libraries that have vast community support and are maintained regularly is more efficient than making own set of codes.
+Don't use global variables, as it makes it harder to understand or investigate the whole objectives of the function because it may be initialized far away from where it is used.
+use of list comprehension, it provides readable and efficient to create lists in Python. it allows to do a single line of code than using traditional loops.
+and lastly make your code readable, code that is too optimized but hard to maintain is not a good practice.
+
+What would you choose, performance first or readability? 
+
+I would choose readability first because if you could write a code and make it functional correctly and then make it clean and maintainable code and finally if required, make performance improvements.
+
+What design pattern do you know?
+
+Model View Controller or MVC is commonly used to separate the components of data, presentation, and user interaction. 
+Decorator Pattern is useful when adding functionality without altering the original code.
+Stategy Pattern is commonly used where you have multiple different logic and the same particular problem, instead of coding each different logic to a main class by using if else, we can encapsulate them as new classes and eliminate the if else condition in the code.
+Factory Pattern is to create an object without specifying the exact class of the objects but allows sub-classes to alter the type of object that will be created.
+There are a bunch of design patterns; I may have already used some of them without realizing their specific names.
+
+What algorithm do you know?
+
+Sorting algorithms, such as heapsort, bubble sort, Merge Sort, something like that, uhm I could not explain to you what the cause that stuff is Hindi ko nagamit since nag start ako sa real-world industry, ang tanging alam ko lang is pag gumawa ka ng algorithm is naka depende sa particular problem na gusto mo e solve using your define algorithm. 
+
+what data structure that you know
+
+List, Set, Tuple, Dictionary na most commly ginagamit natin sa python.
+
+What is treading in Python?
+
+threading is about how we run our program or a set of codes either single-line threading or multi-threading, by default python is a single-line threading and it will read or process our code straightforwardly and line by line. For us to process our code in a parallel way or execute a multiple function in a single process there's a bunch of libraries and modules to help us to multi-thread.
+
+What is the importance of threading?
+
+for example, there are a bunch of functions you have in your code 
+Threading enables us to perform multiple tasks in a single process, improving our application's responsiveness.
+
+
+
+Who Mick Reilly - Vice President | Technical Services - Cisco CCNA Routing & Switching, CCNA Wireless & CCDA Certified - Mick has decades of experience in Information Technology. He specializes in Cisco networking and wireless. Mick loves to build networks that work and troubleshoot the ones that don’t. When he’s not at work, you’ll find him riding the powder around Aspen’s four mountains with anyone who enjoys the same.
+
+ 
+What you heard about our company
+
+Decypher Technologies is a technology services company that offers a range of IT solutions, including:
+
+Managed IT Services – Providing ongoing, flat-rate IT support and maintenance to keep systems running securely and efficiently.
+
+Cellular DAS & Public Safety Solutions – Enhancing cellular coverage indoors or in areas with weak signal using Distributed Antenna Systems (DAS), including for homes, offices, hotels, yachts, and campuses.
+
+Cybersecurity – Delivering proactive cybersecurity strategies tailored to a business's specific needs to reduce risks and protect digital assets.
+
+Compliance Services – Assisting businesses with staying compliant through automated IT risk assessments and reporting tools to simplify regulatory documentation.
+
+They position themselves as a proactive IT partner, aiming to optimize technology performance so clients can focus on their core operations.
