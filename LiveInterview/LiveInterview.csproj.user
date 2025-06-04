@@ -16,6 +16,9 @@
     <Compile Update="custom_tools\RichText.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Update="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Form2.cs">
       <SubType>Form</SubType>
     </Compile>

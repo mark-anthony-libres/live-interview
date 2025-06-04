@@ -44,7 +44,7 @@
             itemsPanel.Margin = new Padding(2);
             itemsPanel.Name = "itemsPanel";
             itemsPanel.RightToLeft = RightToLeft.No;
-            itemsPanel.Size = new Size(668, 439);
+            itemsPanel.Size = new Size(641, 543);
             itemsPanel.TabIndex = 0;
             // 
             // listen_status
@@ -63,9 +63,9 @@
             panel1.Controls.Add(scrollToTopOnNewItem);
             panel1.Controls.Add(listen_status);
             panel1.Dock = DockStyle.Bottom;
-            panel1.Location = new Point(0, 443);
+            panel1.Location = new Point(0, 548);
             panel1.Name = "panel1";
-            panel1.Size = new Size(670, 42);
+            panel1.Size = new Size(643, 42);
             panel1.TabIndex = 1;
             // 
             // scrollToTopOnNewItem
@@ -83,14 +83,14 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(670, 485);
+            ClientSize = new Size(643, 590);
             Controls.Add(panel1);
             Controls.Add(itemsPanel);
             Margin = new Padding(2);
             MaximizeBox = false;
             Name = "Form1";
             Text = "LiveInterview";
-            this.FormClosed += this.Form1_FormClosed;
+            this.FormClosed += Form1_FormClosed;
             this.Load += Form1_Load;
             this.Resize += Form1_Resize;
             panel1.ResumeLayout(false);

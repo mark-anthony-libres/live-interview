@@ -11,26 +11,66 @@ namespace LiveInterview
     {
         private StreamingRecognizeStream streamingCall;
         protected WaveInEvent soundWave;
+        protected const int Rate = 16000; // Match with Google config
+        protected const int Channels = 1;
         private DateTime lastStreamStartTime;
-        protected const int Rate = 8000;
-        public MicListener() : base() {}
+        private object streamLock = new object();
+        public string user_total_speak = "";
+
+        public MicListener() : base() { }
 
         protected override async void OnDataAvailable(object sender, WaveInEventArgs e)
         {
-            
-            await streamingCall.WriteAsync(new StreamingRecognizeRequest
+            if (streamingCall == null) return;
+
+            await RestartStreamIfNeededAsync();
+
+            try
             {
-                AudioContent = Google.Protobuf.ByteString.CopyFrom(e.Buffer, 0, e.BytesRecorded)
-            });
+                await streamingCall.WriteAsync(new StreamingRecognizeRequest
+                {
+                    AudioContent = Google.Protobuf.ByteString.CopyFrom(e.Buffer, 0, e.BytesRecorded)
+                });
+            }
+            catch (Exception ex)
+            {
+                Trace.WriteLine($"Error sending audio: {ex.Message}");
+            }
         }
 
-   
+        private async Task RestartStreamIfNeededAsync()
+        {
+            if ((DateTime.UtcNow - lastStreamStartTime).TotalSeconds < 270)
+                return;
 
+            Trace.WriteLine("Restarting stream due to time limit...");
 
- 
+            if (soundWave != null)
+            {
+                soundWave.DataAvailable -= OnDataAvailable;
+                soundWave.StopRecording();
+                soundWave.Dispose();
+                soundWave = null;
+                this.isListening = false;
+            }
+
+            try
+            {
+                if (streamingCall != null)
+                {
+                    streamingCall.WriteCompleteAsync().Wait();
+                }
+            }
+            catch (Exception ex)
+            {
+                Trace.WriteLine($"Error closing old stream: {ex.Message}");
+            }
+
+            Start();
+        }
+
         public override async void Start()
         {
-
             if (this.isListening)
                 return;
 
@@ -38,22 +78,21 @@ namespace LiveInterview
 
             streamingCall = this.speechClient.StreamingRecognize();
 
-            // Write the initial request with the config
-            await streamingCall.WriteAsync(
-                new StreamingRecognizeRequest
+            // Write initial config
+            await streamingCall.WriteAsync(new StreamingRecognizeRequest
+            {
+                StreamingConfig = new StreamingRecognitionConfig
                 {
-                    StreamingConfig = new StreamingRecognitionConfig
+                    Config = new RecognitionConfig
                     {
-                        Config = new RecognitionConfig
-                        {
-                            Encoding = RecognitionConfig.Types.AudioEncoding.Linear16,
-                            SampleRateHertz = 16000,
-                            LanguageCode = "en-US"
-                        },
-                        InterimResults = false
-                    }
-                });
-
+                        Encoding = RecognitionConfig.Types.AudioEncoding.Linear16,
+                        SampleRateHertz = Rate,
+                        LanguageCode = "en-US",
+                        AudioChannelCount = Channels
+                    },
+                    InterimResults = true
+                }
+            });
 
             soundWave = new WaveInEvent
             {
@@ -62,37 +101,47 @@ namespace LiveInterview
             };
 
             soundWave.DataAvailable += this.OnDataAvailable;
-            this.soundWave.StartRecording();
+            soundWave.RecordingStopped += (s, e) => Trace.WriteLine("Recording stopped.");
+            soundWave.StartRecording();
 
-            Task.Run(readResponses);
-
-
+            lastStreamStartTime = DateTime.UtcNow;
+            _ = Task.Run(readResponses); // fire-and-forget
         }
 
         private async Task readResponses()
         {
             var responseStream = streamingCall.GetResponseStream();
 
-            while (await responseStream.MoveNextAsync()) // MoveNextAsync() moves to the next response
+            try
             {
-                var response = responseStream.Current;
-
-                // Process each result in the response
-                foreach (var result in response.Results)
+                while (await responseStream.MoveNextAsync())
                 {
-                    if (result.IsFinal)
+                    var response = responseStream.Current;
+
+                    foreach (var result in response.Results)
                     {
-                        // Output the final transcription
-                        Trace.WriteLine($"Final Transcription: {result.Alternatives[0].Transcript}");
-                    }
-                    else
-                    {
-                        // Output the interim transcription
-                        Trace.WriteLine($"Interim Transcription: {result.Alternatives[0].Transcript}");
+                        var transcript = result.Alternatives[0].Transcript;
+
+                        if(string.IsNullOrEmpty(transcript.Trim()))
+                        {
+                            continue;
+                        }
+
+                        if(result.IsFinal)
+                        {
+                            user_total_speak += $" {transcript}";
+                        }
+
+                        Trace.WriteLine(result.IsFinal
+                            ? $"Final: {transcript}"
+                            : $"Interim: {transcript}");
                     }
                 }
             }
-
+            catch (Exception ex)
+            {
+                Trace.WriteLine($"Stream closed or errored: {ex.Message}");
+            }
         }
     }
 }

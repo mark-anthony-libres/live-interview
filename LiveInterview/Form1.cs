@@ -9,57 +9,7 @@ using static System.Net.Mime.MediaTypeNames;
 namespace LiveInterview
 {
 
-    class FormKeyboard : GlobalKeyListener
-    {
-        private readonly HashSet<int> _pressedKeys = new();
-        private Task pressRun;
-        private CancellationTokenSource _cts;
-
-        private async Task BeforeTriggerAsync(int key, CancellationToken token)
-        {
-            try
-            {
-                await Task.Delay(1500, token); // Delay can be adjusted
-                Trace.WriteLine(string.Join(",", _pressedKeys));
-
-                if (_pressedKeys.SetEquals(new[] { (int)Keys.LControlKey, (int)Keys.LShiftKey }))
-                {
-                    _onTrigger?.Invoke(key); // 🔥 Trigger
-                }
-                else
-                {
-                    _pressedKeys.Clear(); // Reset if other keys are pressed
-                }
-            }
-            catch (TaskCanceledException)
-            {
-                // Ignore cancellation
-            }
-            finally
-            {
-                pressRun = null;
-            }
-        }
-
-        protected override void OnKeyDownPress(int key)
-        {
-            _pressedKeys.Add(key);
-
-            // Cancel previous task if running
-            if (pressRun != null && !pressRun.IsCompleted)
-            {
-                _cts?.Cancel();
-            }
-
-            _cts = new CancellationTokenSource();
-            pressRun = BeforeTriggerAsync(key, _cts.Token);
-        }
-        protected override void OnKeyUp(int key)
-        {
-        }
-
-
-    }
+  
     public partial class Form1 : Form
     {
         private AudioListener audiolistener;
@@ -123,8 +73,8 @@ namespace LiveInterview
             this.audiolistener.when_start = this.audio_listener_start;
             this.audiolistener.on_item = this.InsertItem;
 
-            //this.micListener = new MicListener();
-            //this.micListener.Start();
+            this.micListener = new MicListener();
+            this.micListener.Start();
 
             formKeyboard = new FormKeyboard();
             formKeyboard.Start(this.ListenKeyboard);
